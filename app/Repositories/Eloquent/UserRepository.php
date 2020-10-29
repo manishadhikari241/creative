@@ -35,7 +35,7 @@ class UserRepository implements \App\Repositories\Contracts\UserRepository
     public function all()
     {
 //        $distinct = Form::join('users', 'users.id', '=', 'forms.user_id')->groupBy('users.name')->get();
-        $distinct = Form::all();
+        $distinct = Form::latest()->get();
         return $distinct;
     }
 
